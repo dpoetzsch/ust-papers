@@ -1,5 +1,36 @@
-\todo{Describe the currently existing technologies and their advantages and disadvantages. --> MARC} \\ 
+There are currently several approaches developed or in development that partially solve the task of autonomous climbing route recognition and route definition.
+However, all current approaches have in common that they are missing essential features in order to be deployed as a fully functional system or are infeasible. 
+The following subsections will highlight the most relevant tracking and detection methods and will depict their advantages and restrictions. 
 
-\todo{also mention the overall approach that the position tracking and matches the aggregated data against a database of existing routes}
+\subsection{Inertia Based Systems}
+The ClimSense system \cite{pub7648, Kosmalla:2015:CAC:2702123.2702311} uses data of recorded ascents in order to recognize already climbed routes. 
+The data recording is performed by using wrist-worn inertia measurement units (IMUs).
+As already mentioned this system relies on recorded data, but we do want the restriction to only be able to classify known routes. We aim at identifying new routes as well. 
 
-testciting \cite{McIntosh:2016:EPH:2858036.2858093}
+\subsection{Optical Systems}
+betaCube \cite{pub8245, Wiehr:2016:BET:2851581.2892393} uses an accompanying Android application which has to be used in order to create a route. 
+Furthermore skeleton tracking of the Kinect camera is used in order to detect the climber during his ascent, this however introduces some disadvantages like occlusion and grabbing of occluded holds. 
+Furthermore the optical technologies are not able to detect with certainty of a grab is actually grabbed.
+The approach described in the paper 'Augmented Climbing: interacting with projected graphics on a climbing wall' \cite{Kajastila:2014:ACI:2611780.2581139, Kajastila:2014:ACI:2559206.2581139} is because of it's optical nature not occlusion resistant, too. 
+Therefore it has the same resitrictions as the betaCube.
+
+\subsection{Muscular Tracking}
+The Myo Gesture Control Armband \cite{Myo:Online} consists of eight electromyographic (EMG) sensors that are able to measure myostatic muscle tension. 
+Additional the Myo is equipped with an inertial measurement unit (IMU). 
+A similar system equipped with additional pressure sensors is the EMPress \cite{McIntosh:2016:EPH:2858036.2858093}. 
+Both systems allow the detection of hold grabbing but are limited in the concrete positioning of hand and feet on the wall.
+
+\subsection{Smart Holds}
+Smart holds are holds equipped with sensors that allow the acquisition of additional data during the ascent of a climber. 
+This allows for a very precise route tracking using e.g. RFID identification of individual holds and/or force measurement \cite{Kistler:Online, Lechner:Online}. 
+\todo{find additional/better references}
+However, this approach has the tremendous disadvantage that all holds of a gym have to be replaced in order to provide the functionality of autonomous climbing route recognition and route definition to all athletes. 
+This is rather expensive and therefore infeasible approach.  
+
+\iffalse
+	\todo{Describe the currently existing technologies and their advantages and disadvantages. --> MARC} \\ 
+
+	\todo{also mention the overall approach that the position tracking and matches the aggregated data against a database of existing routes}
+
+	testciting \cite{McIntosh:2016:EPH:2858036.2858093}
+\fi
