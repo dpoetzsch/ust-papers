@@ -6,5 +6,17 @@ It can also match the position of hands and feet to holds on the wall but only i
 We will try to improve accuracy of route recognition by using muscle tracker in addition to existing technology.
 Muscle tracker measures electrical activity from muscles and therefore can show whether a hold was actually used.
 By combining muscular tracking with image analysis we will provide more reliable way of definig route than image analysis alone.
+
 \todo{Describe the technical issues of the currently available technologies we want to use. --> FELIX}\\
-\todo{Mention all equipment we need in order to succeed}
+The main issue of the currently available image based systems is occlusion, because if you use a hold, which is in front of your body the camera system cannot detect this because it is a few meters away from the climbing wall.
+For the wearable tracker the major  problem is to show the climber how to climb a route.
+These tracker can detect which route was climb or if it was climbed before but they cannot give advice or help the climber to improve their skills.
+
+\todo{Mention all equipment we need in order to succeed}\\
+For the implementation of this hybrid approach we use the betaCube for the image analysis and MyoTracker for recognising muscle activity.
+The betaCube, which was developed at the DFKI and is used in the climbtrack system uses a infrared depth camera and a normal color camera. 
+The betaCube can track a climber at a wall and is able to recognise if the hand or foot of the climber is very close to the wall.
+So it can detect if your hand or foot is at hold or not.
+The other device we are going to use is the MyoTracker which is a wearable for the forearm that was primarily developed to detect gestures and poses of the hand to control your computer or smartphone.
+It has myoelectric detectors and a gyroscopic sensor, so it can spot the small electric pulses the body uses to activate the muscles and furthermore it is able to recognise in which angle the arm is held.
+%The several myoelectric sensors inside the tracker can recognise several different gestures which we can use to detect if the climber grabs a hold or not.
