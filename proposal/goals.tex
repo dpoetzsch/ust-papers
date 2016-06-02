@@ -2,10 +2,10 @@ To clearly define the scope of our project we set up a number of goals we want t
 
 \subsection{Must-Haves}
 \begin{description}
-	\item[MUST1] Implement a software that uses \todo{NAME OF MUSCLE TRACKER \cite{NAME OF MUSCLE TRACKER}} to detect if climber grabs a hold
-	\item[MUST2] Utilize the visual detection technology of the betaCube (\todo{\cite{betaCube}}) to match the position of the hand or foot with the closest climbing hold at any given time. This requires the hold to be visibly from the perspective of the camera (see may-haves for hidden holds).
+	\item[MUST1] Implement a software that uses the Myo and/or EMPress to detect if climber grabs a hold
+	\item[MUST2] Utilize the visual detection technology of the betaCube to match the position of the hand or foot with the closest climbing hold at any given time. This requires the hold to be visibly from the perspective of the camera (see may-haves for hidden holds).
 	\item[MUST3] Combine MUST1 and MUST2 in order to identify the grabbed holds during the climb of a route.
-	\item[MUST4] Integrate the route recognition approach from MUST3 into the climbtrack (\todo{\cite{climbtrack}}) route recording system.
+	\item[MUST4] Integrate the route recognition approach from MUST3 into the betaCube route recording system.
 \end{description}
 \subsection{May-Haves}
 \begin{description}
@@ -18,4 +18,5 @@ To clearly define the scope of our project we set up a number of goals we want t
 \begin{description}
 	\item[NOT1] No multi-user system: The system only needs to deal with one climber at a time
 	\item[NOT2] No real-life optimization, e.g. no optimizations for magnesia in the air of climbing gyms. It is enough if the technology works under experimental conditions.
+	\item[NOT3] No complex climbing walls: The system is only intended to work for climbing walls without a lot of structure.
 \end{description}
