@@ -1,0 +1,22 @@
+To clearly define the scope of our project we set up a number of goals we want to accomplish in a Must-, May-, and Must-Not-Have format:
+
+\subsection{Must-Haves}
+\begin{description}
+	\item[MUST1] Implement a software that uses the Myo and/or EMPress to detect if climber grabs a hold
+	\item[MUST2] Utilize the visual detection technology of the betaCube to match the position of the hand or foot with the closest climbing hold at any given time. This requires the hold to be visibly from the perspective of the camera (see may-haves for hidden holds).
+	\item[MUST3] Combine MUST1 and MUST2 in order to identify the grabbed holds during the climb of a route.
+	\item[MUST4] Integrate the route recognition approach from MUST3 into the betaCube route recording system.
+\end{description}
+\subsection{May-Haves}
+\begin{description}
+	\item[MAY1] Create a simple application (web or android) that uses our route recognition (MUST3) to create a "tick list" of climbed routes
+	\item[MAY2] Enhance the application from MAY1 with a simple estimation of route difficulty. In a simple approach we could evaluate the number of attempts made by an individual climber: The more attempts the harder the route.
+	\item[MAY3] Improve difficulty estimation from MAY2 by using the data of multiple users for a more precise difficulty estimation.
+	\item[MAY4] Enhance detection of grabbed hidden holds: The climber might cover the hold with her body. In this case we could estimate the most probable hold that was grabbed, e.g. by using distance or additional positional data of the hand or foot.
+\end{description}
+\subsection{Must-Not-Haves}
+\begin{description}
+	\item[NOT1] No multi-user system: The system only needs to deal with one climber at a time
+	\item[NOT2] No real-life optimization, e.g. no optimizations for magnesia in the air of climbing gyms. It is enough if the technology works under experimental conditions.
+	\item[NOT3] No complex climbing walls: The system is only intended to work for climbing walls without a lot of structure.
+\end{description}

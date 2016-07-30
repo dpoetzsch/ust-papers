@@ -1,0 +1,16 @@
+We are going to combine image analysis with muscle tracking to provide the technology that will allow climbers to define routes simply by climbing it.
+
+For the image analysis we rely on the betaCube technology.
+It provides us with location information of hands and feet of the climber as long as they are not concealed.
+Additionally, betaCube stores the location of all holds on the climbing wall.
+Based on this data, our system will be able to match the location of hands and feet with the closest hold.
+
+As mentioned in related work, several muscle trackers exist.
+In a first step we will test the capabilities of the Myo tracker.
+The MyoTracker is a wearable for the forearm that was primarily developed to detect gestures and poses of the hand to control a computer or smartphone.
+It has myoelectric detectors and a gyroscopic sensor, so it can spot the small electric pulses the body uses to activate the muscles and furthermore it is able to recognise in which angle the arm is held.
+We hope to reuse these features in order to detect if a hold is grabbed.
+If myostatic muscle tension does not suffice for that task we will investigate the EMPress.
+
+Finally, the routes detected by our system will be stored in the betaCube.
+
