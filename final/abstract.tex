@@ -3,7 +3,8 @@ Modern climbing assistance systems allow defining routes using external devices.
 This makes the training process unintuitive.
 We believe such a system should be able to autonomously record and identify routes by observing the climber.
 The difficulty here is to provide a reliable detection of the holds grabbed.
-We tackle this issue using a hybrid approach based on visual analysis with a measurement of the muscle activity.
-In particular, this works as follows:
-First, we utilize the data given by Beta-Cube to match the position of the hand or foot with the closest hold.
-Second, we use the Myo muscle tracker (or similar) to determine if the hold was actually grabbed.
+We tackle this issue using a hybrid approach:
+First, we use the Myo muscle tracker to determine when a hold was grabbed.
+Second, we analyze the visual data given by Beta-Cube to match the position of the hand with the closest hold.
+Evaluating this technique showed that it was able to reliably detect grabbed holds.
+Furthermore, our system allows deleting previously grabbed holds by utilizing gestures detected by the Myo.
