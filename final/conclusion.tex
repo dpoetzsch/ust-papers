@@ -1,15 +1,13 @@
-\begin{description}
-	\item[June 16] Implementation of first drafts of MUST1 and MUST2
-	\item[June 30] Implementation of first drafts of MUST3 and MUST4
-	\item[July 14] Testing and finalization of the Must-Haves. Starting to work on May-Haves if possible
-	\item[July 28] Depending on the progress of the project more work on May-Haves
-	\item[August 11] Completion of final report
-\end{description}
+In this paper we proposed a system that is able to autonomously recognize climbing routes.
+We solved the task of detecting grabbed holds by a hybrid approach:
+Muscle tracking allowed us to identify \emph{if} a hold was grabbed, Visual analysis decided \emph{which} hold was grabbed.
+Field studies showed that our system was reliably detecting grabbed hand holds.
 
-A graphical representation of this schedule is depicted in Figure \ref{fig:gantt}.
+For the future, an important step would be to integrate foot hold detection into the system, for example using pressure sensors in the climber's shoes.
+As mentioned before, we already paved the way for this extension.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=1\columnwidth]{gantt.pdf}
-  \caption{Gantt diagramm depicting the schedule of this project.}~\label{fig:gantt}
-\end{figure}
+Another important improvement would be to stabilize the offset calculation that would enable us to get rid of the colored wristbands.
+Also, the colors could be replaced, for example by an infrared signal.
+betaCube's kinect camera already provides means to detect such a signal.
+
+Finally, a precise statistical evaluation of the system with different climbers and conditions is still to be done.
