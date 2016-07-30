@@ -1,6 +1,6 @@
-There are currently several approaches developed or in development that partially solve the task of autonomous climbing route recognition and route definition.
-However, all current approaches have in common that they are missing essential features in order to be deployed as a fully functional system or are infeasible. 
-The following subsections will highlight the most relevant tracking and detection methods and will depict their advantages and restrictions. 
+There are currently several approaches that partially solve the task of autonomous climbing route recognition and route definition.
+However, all current approaches have in common that they are infeasible or are missing essential features in order to be deployed as a fully functional system. 
+The following subsections highlight the most relevant tracking and detection methods and discuss their advantages and restrictions. 
 
 \subsection{Inertia Based Systems}
 The ClimbSense system \cite{pub7648, Kosmalla:2015:CAC:2702123.2702311} uses data of recorded ascents in order to recognize already defined routes. 
@@ -17,7 +17,7 @@ In general, optical technologies are currently not able to detect with certainty
 
 \subsection{Muscular Tracking}
 The Myo Gesture Control Armband \cite{Myo:Online} consists of eight electromyographic (EMG) sensors that are able to measure myostatic muscle tension. 
-Additional the Myo is equipped with an inertial measurement unit (IMU). 
+Additionally, the Myo is equipped with an inertia measurement unit (IMU). 
 A similar system equipped with additional pressure sensors is the EMPress \cite{McIntosh:2016:EPH:2858036.2858093}. 
 Both systems allow the detection of hold grabbing but are not able to determine the position of a climber's hands and feet.
 
@@ -25,12 +25,4 @@ Both systems allow the detection of hold grabbing but are not able to determine 
 Smart holds are holds equipped with sensors that allow the acquisition of additional data during the ascent of a climber. 
 This allows for a very precise route tracking using e.g. RFID identification of individual holds and/or force measurement \cite{Kistler:Online, Lechner:Online}. 
 However, this approach has the tremendous disadvantage that all holds of a gym have to be replaced in order to provide the functionality of autonomous climbing route recognition and route definition to all athletes. 
-This is a rather expensive and therefore infeasible approach.  
-
-\iffalse
-	\todo{Describe the currently existing technologies and their advantages and disadvantages. --> MARC} \\ 
-
-	\todo{also mention the overall approach that the position tracking and matches the aggregated data against a database of existing routes}
-
-	testciting \cite{McIntosh:2016:EPH:2858036.2858093}
-\fi
+This is a rather expensive and therefore often infeasible approach.
