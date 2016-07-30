@@ -3,14 +3,14 @@ It allows to intuitively define new routes by climbing them and track the climbe
 In a second step the gathered statistical data can be used e.g.\ for automatic difficulty estimation.
 
 Climbing route recognition that allows recording of new routes heavily depends on reliably detecting which individual holds were used by the climber.
-Several approaches exist, most of which rely including smart holds \cite{Kistler:Online, Lechner:Online} or visual detection \cite{pub8245, Wiehr:2016:BET:2851581.2892393, Kajastila:2014:ACI:2611780.2581139, Kajastila:2014:ACI:2559206.2581139}.
+Several approaches exist, including smart holds \cite{Kistler:Online, Lechner:Online} or visual detection \cite{pub8245, Wiehr:2016:BET:2851581.2892393, Kajastila:2014:ACI:2611780.2581139, Kajastila:2014:ACI:2559206.2581139}.
 However, smart holds are rather expensive and visual detection suffers from reliability issues \cite{pub8245, Wiehr:2016:BET:2851581.2892393, Kajastila:2014:ACI:2611780.2581139, Kajastila:2014:ACI:2559206.2581139}.
-To overcome these we propose a hybrid approach that combines visual detection with a muscle tracker.
-The muscle tracker will allow us to identify if a hold was grabbed by the climber detecting if she flexed her muscles in arms and legs.
-The visual detection system matches the position of the hand or foot with the closest hold on the wall.
+To overcome these issues we propose a hybrid approach that combines visual detection with a muscle tracker.
+The muscle tracker allows us to identify if a hold was grabbed by detecting if the climber flexed the muscles in her arms.
+The visual detection system matches the position of the hand with the closest hold on the wall.
 
 As a result, our technology not only allows to distinguish existing routes but also provides means to define new ones just by climbing them.
 
-In the following proposal we will first give an overview over the existing approaches in route recognition.
-We continue by an introduction into the technologies we plan to utilize for the implementation of our approach.
-We conclude by clearly defining the goals we want to reach within the seminar and providing a schedule for them.
+In the following report we will first give an overview over the existing approaches in route recognition.
+Then, we discuss the details of our implementation of the proposed approach.
+We conclude by evaluating our approach and giving an outlook for future work.
