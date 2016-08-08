@@ -20,11 +20,10 @@ Furthermore it is able to recognize in which angle the arm is held using an inte
 The muscle detection part of our system is called the \emph{Myo server}.
 It is a stand-alone server that is connected both to the Myo wearables via bluetooth and to the betaCube via a TCP connection.
 
-\todo{Describe how exactly we detect a grab from the raw data of the Myo}
 The program waits for some specific values that occur at a few of the muscle sensors every time when we start to grab a hold.
 Afterwards the system is in a pending phase.
-In this phase the program compute the sum of the absolute values of all 8 myo-electric sensors and test how often the value is above or below a certain threshold, if it is first 10 times above the system enters the holding state or returns to the waiting state when it is 5 times below.
-In the holding phase we wait for the the sum of the muscle activity to be 5 times in a row to be below the threshold to go back to the waiting phase.
+In this phase the program computes the sum of the absolute values of all 8 myo-electric sensors and test how often the value is above or below a certain threshold, if it is first 10 times above the system enters the holding state or returns to the waiting state when it is 5 times below.
+In the holding phase we wait for the the sum of the muscle activity to be 5 times in a row below the threshold to go back to the waiting phase.
 All threshold values and the amount we wait until we change the phase are empirical.
 So we tested these values and it worked very well for all persons which tried it but there can maybe some differences depending on the user.
 
