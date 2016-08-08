@@ -41,6 +41,14 @@ In particular we extended the software such that it connects to the Myo server a
 When a grab event occurs, our system retrieves the current picture of the climber from the kinect camera and tries to find the according hand in the picture.
 
 \todo{Describe how we find the hand using colors}
+The climber has colored bands on each limb.
+Each band is of different color and the colors are predefined in the program.
+The program retrieves an image from Kinect camera.
+It looks through the pixels of the image skipping every second line and every second pixel in the line.
+The program then attempts to categorize each pixel color into one of four predefined color groups, i.e. red, green, blue or yellow.
+The color groups are defined by the difference between their RGB components.
+If none suite, the pixel is skipped.
+If the pixel was categorized successfully and the color group is the one mapped to certain limb, the coordinates of the pixel are returned.
 
 \subsection{Getting rid of the colored wristbands}
 We also worked on a more sophisticated approach to find the hand of the climber in the picture.
