@@ -60,4 +60,7 @@ This problem might be solved by estimating the drift speed in advance but we did
 
 \subsection{Deletion of previously grabbed holds}
 
-\todo{Describe how we use gestures to delete previously grabbed holds}
+In order to delete an already defined hold of the route, we use the gesture detection capabilities of the Myo SDK.
+When the climber performs such a gesture, the Myo Server sends a deletion signal to the betaCube.
+The latter then removes the last added hold.
+However, evaluation showed that gesture recognition by the Myo SDK is not reliable.
