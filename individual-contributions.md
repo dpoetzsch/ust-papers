@@ -60,4 +60,4 @@ In the final report and in the proposal I wrote some parts of the implementation
 In addition I helped finalizing and correcting the reports.
 
 In the end I want to say that everybody in the team worked a lot for the project.
-Therefore all team meetings were very productive and successfully.
+Therefore all team meetings were very productive and successful.
