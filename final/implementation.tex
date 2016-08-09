@@ -1,61 +1,59 @@
-Our system combines image analysis with muscle tracking to provide the technology that will allow climbers to define routes simply by climbing it.
-In particular our system constructed as follows:
-During her ascent, the muscle data of the climber's arms is constantly monitored by our \emph{Myo server}.
+Our system combines image analysis with muscle tracking to provide the technology that will allow climbers to define routes simply by climbing them.
+In particular, our system is constructed as follows:
+During the climber's ascent, the muscle data of her arms is constantly monitored by our \emph{Myo server}.
 Additionally, the climber is filmed by a camera integrated into the \emph{betaCube}.
 Now, when the climber grabs a hold the following happens:
-The Myo server will detect a specific increase in muscle activity and notify the betaCube that a hold was grabbed.
-The betaCube then extracts the position of the climbers hands (and potentially feet) from the visual data provided by its camera.
+The Myo server detects a specific increase in muscle activity and notifies the betaCube that a hold was grabbed.
+The betaCube then extracts the position of the climber's hands (and potentially feet) from the visual data provided by its camera.
 That position is matched with the previously stored positions of the holds on the wall.
 If a hold is found within a certain radius around the position of the climbers hand the betaCube will store that hold as part of the route.
-Finally the betaCube provides visual feedback to the climber by highlighting the found hold.
+Finally, the betaCube provides visual feedback to the climber by highlighting the found hold.
 
 In the following sub sections we will have an in-depth look into the core components of our system.
 
 \subsection{Grab detection via muscle tracking}
 Our system uses the Myo tracker for measuring the climbers muscle activity.
 The Myo tracker is a wearable for the forearm that was primarily developed to detect gestures and poses of the hand to control a computer or smartphone.
-It has myoelectric detectors so it can spot the small electric pulses the body uses to activate the muscles.
-Furthermore it is able to recognize in which angle the arm is held using an integrated inertia measurement unit (IMU).
+It has myoelectric sensors that spot the small electric pulses the body uses to activate the muscles.
+Furthermore, it is able to recognize in which angle the arm is held using an integrated inertia measurement unit (IMU).
 
 The muscle detection part of our system is called the \emph{Myo server}.
 It is a stand-alone server that is connected both to the Myo wearables via bluetooth and to the betaCube via a TCP connection.
 
-The program waits for some specific values that occur at a few of the muscle sensors every time when we start to grab a hold.
-Afterwards the system is in a pending phase.
-In this phase the program computes the sum of the absolute values of all 8 myo-electric sensors and test how often the value is above or below a certain threshold, if it is first 10 times above the system enters the holding state or returns to the waiting state when it is 5 times below.
-In the holding phase we wait for the the sum of the muscle activity to be 5 times in a row below the threshold to go back to the waiting phase.
-All threshold values and the amount we wait until we change the phase are empirical.
-So we tested these values and it worked very well for all persons which tried it but there can maybe some differences depending on the user.
+At run time, the server waits for specific values that occur at a few of the muscle sensors every time the climber starts to grab a hold.
+Then the system enters a pending phase where it continues to listen for the muscle data.
+Each received data-set is summed up and compared to a threshold.
+If most of the received values exceed that threshold, the system signals a grab and transitions to the holding state.
+The latter is terminated when the muscle data starts to continuously drop below the threshold, returning the system to the initial waiting phase.
+All threshold values were determined empirically.
 
-
-After a grab was detected the Myo server sends a short JSON message containing the current time and the extremity where the grab was detected (i.e., left or right hand) to the betaCube.
+The grab signal of the Myo server consists of a short JSON message containing the current time and the extremity where the grab was detected (i.e., left or right hand) to the betaCube.
 
 \subsection{Hand to hold matching via visual analysis}
 For the image analysis we rely on the betaCube technology.
 The betaCube is a climb tracking system consisting of a kinect camera for visual tracking and an integrated projector for projecting things to the wall.
 Additionally the betaCube already has the locations of all holds on the wall stored.
 
+In order to facilitate the extremity recognition, the climber wears colored bands on each limb.
+Each band is of different color which are predefined in the program.
+
 Our system tightly integrates with the betaCube software.
 In particular we extended the software such that it connects to the Myo server at start up and listens for grab events.
-When a grab event occurs, our system retrieves the current picture of the climber from the kinect camera and tries to find the according hand in the picture.
-
-\todo{Describe how we find the hand using colors}
-The climber has colored bands on each limb.
-Each band is of different color and the colors are predefined in the program.
-The program retrieves an image from Kinect camera.
-It looks through the pixels of the image skipping every second line and every second pixel in the line.
-The program then attempts to categorize each pixel color into one of four predefined color groups, i.e. red, green, blue or yellow.
+When a grab event occurs, our system retrieves the current picture of the climber from the Kinect camera.
+The program then attempts to categorize each pixel into the predefined color groups.
 The color groups are defined by the difference between their RGB components.
-If none suite, the pixel is skipped.
 If the pixel was categorized successfully and the color group is the one mapped to certain limb, the coordinates of the pixel are returned.
+Otherwise, the pixel is skipped.
+Finally, the system checks for a hold in the neighborhood of the found pixel.
+If such a hold is found, it is marked as grabbed.
 
 \subsection{Getting rid of the colored wristbands}
 We also worked on a more sophisticated approach to find the hand of the climber in the picture.
 In this second approach the climber does not have to wear a colored wristband.
 Instead, the Myo wearables were colored.
-The Myo server was extended to additionally calculate the x- and y-offset of the hand from the position of the Myo wearable in centimeters.
+The Myo server was extended to additionally calculate the x- and y-offset of the hand from the position of the Myo wearable.
 We did so by using the rotational data provided by the Myo's integrated IMU and an estimate of the length of the climbers forearm.
-The betaCube would then adjust the found position of the Myo using those offsets.
+The betaCube would then adjust the found color position of the Myo using those offsets.
 
 However, in many cases we experienced drifts that made the angles only stabilize after about 5 seconds which is infeasible for a real-time system.
 This problem might be solved by estimating the drift speed in advance but we did not have time to try that out.
