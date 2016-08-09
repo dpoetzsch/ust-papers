@@ -42,3 +42,22 @@ Furthermore, I contributed to the project and team management, e.g. by organizin
 
 Lastly, it has to be mentioned that I sincerely enjoyed working with this team. 
 Every member actively participated and contributed to the success of this project.
+
+# Felix
+
+My contribution to the Seminar project was basically the implementation of the Myo software.
+In the first half of the seminar I implemented and tested the grab detection of the Myo based on the EMG-Data provided by the armband.
+The program requests the server, that was written by David, to send a message to the betaCube when it detects a grabbed hold.
+In the second half I extended the grab detection with the orientation data to compute the offset of the hand compared to the position of the armband.
+So I implemented some trigonometric functionality and a distance based sampling to get correct offset from the orientation data of the Myo.
+Together with David, I debugged and tested the offset computation.
+
+While the team meetings I setted up and controlled the Myo server together with the grab detection and organized the network connection between the Myo server and the betaCube.
+I also organized the spray cans and colored the sheets of paper we needed for the hands and Myos to be able to recognise them in the color detection.
+Furthermore, I prepared the Myos for the team meetings.
+
+In the final report and in the proposal I wrote some parts of the implementation section, which deal with the Myo muscle tracker and the grab detection.
+In addition I helped finalizing and correcting the reports.
+
+In the end I want to say that everybody in the team worked a lot for the project.
+Therefore all team meetings were very productive and successfully.
