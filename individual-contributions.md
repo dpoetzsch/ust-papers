@@ -61,3 +61,21 @@ In addition I helped finalizing and correcting the reports.
 
 In the end I want to say that everybody in the team worked a lot for the project.
 Therefore all team meetings were very productive and successful.
+
+#Anna
+
+I was responsible for image analysis part of the project.
+That included image retrieval from Kinect and locating the position of hands and feet on the wall.
+Hands and feet were color coded, so my task was to find the coordinates of a specific color from the image.
+To make color search more light-independent, we used differences between RGB components to distinguish colors.
+When color search was implemented, I was dealing with the optimization of the process.
+
+During testing phase, I monitored and debugged the betaCube together with Marc.
+Most of the time, out team was working together to test, debug and improve our project.
+
+Together with my teammates, we wrote both proposal and final report.
+All of us participaed in structuring, designing and holding our presentations.
+
+Finally, I think that every member of the team made a great contribution to the project.
+Everyone worked hard at home as well as during our meetings.
+I enjoyed working with this team.
