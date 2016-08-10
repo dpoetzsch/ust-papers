@@ -53,10 +53,7 @@ In this second approach the climber does not have to wear a colored wristband.
 Instead, the Myo wearables were colored.
 The Myo server was extended to additionally calculate the x- and y-offset of the hand from the position of the Myo wearable.
 We did so by using the rotational data provided by the Myo's integrated IMU and an estimate of the length of the climbers forearm.
-The betaCube would then adjust the found color position of the Myo using those offsets.
-
-\todo{However, in many cases we experienced drifts that made the angles only stabilize after about 5 seconds which is infeasible for a real-time system.
-This problem might be solved by estimating the drift speed in advance but we did not have time to try that out.}
+The betaCube then adjusts the found color position of the Myo using those offsets.
 
 \subsection{Deletion of previously grabbed holds}
 
